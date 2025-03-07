@@ -12,11 +12,12 @@ This module provides common utilities.
 """
 
 # Imports
+import functools
+import json
 import os
 import re
-import json
 import time
-import functools
+
 from docx import Document
 
 

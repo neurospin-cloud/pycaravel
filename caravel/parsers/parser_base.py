@@ -11,11 +11,11 @@ This module contains the generic parser definition.
 """
 
 # System import
-import os
-import json
-import glob
-import pickle
 import datetime
+import glob
+import json
+import os
+import pickle
 
 # Third party import
 import pandas as pd
@@ -108,8 +108,8 @@ class ParserBase:
                 representations[project] = {}
             representations[project].setdefault(name, []).append(
                 {"date": timestamp, "path": path})
-        for project, project_data in representations.items():
-            for name, name_data in project_data.items():
+        for project_data in representations.values():
+            for name_data in project_data.values():
                 name_data.sort(key=lambda x: datetime.datetime.strptime(
                     x["date"], "%Y-%m-%d"))
         return representations
