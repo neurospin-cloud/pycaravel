@@ -108,8 +108,8 @@ class ParserBase:
                 representations[project] = {}
             representations[project].setdefault(name, []).append(
                 {"date": timestamp, "path": path})
-        for project, project_data in representations.items():
-            for name, name_data in project_data.items():
+        for project_data in representations.values():
+            for name_data in project_data.values():
                 name_data.sort(key=lambda x: datetime.datetime.strptime(
                     x["date"], "%Y-%m-%d"))
         return representations
