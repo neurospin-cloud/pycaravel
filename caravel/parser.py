@@ -13,10 +13,10 @@ This module contains the generic parser definition.
 # Imports
 import re
 import warnings
-from string import Formatter
 from itertools import product
-from caravel.parsers import BIDSParser
+from string import Formatter
 
+from caravel.parsers import BIDSParser
 
 # Global parameters
 # > define all the available parsers
@@ -157,7 +157,7 @@ def build_path(keys, path_patterns, strict=False):
         # Optional patterns with selector are cast to mandatory or removed
         for op in optional_patterns:
             for ent_name in {k for k, v in keys.items() if (v is not None)
-                             and not (v[0] != v[0])}:
+                             and not (v[0] != v[0])}:  # noqa: SIM202 FIXME?
                 if (f'{{{ent_name}}}') in op:
                     new_path = new_path.replace(op, op[1:-1])
                     continue

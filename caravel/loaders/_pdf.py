@@ -36,6 +36,6 @@ class PDF(LoaderBase):
             the loaded table.
         """
         with open(path, "rb") as file:
-            fileReader = PyPDF2.PdfReader(file)
+            file_reader = PyPDF2.PdfReader(file)
 
-        return fileReader
+        return file_reader

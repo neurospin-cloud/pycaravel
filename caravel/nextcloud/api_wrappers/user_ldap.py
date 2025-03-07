@@ -1,4 +1,5 @@
 import re
+
 from ..base import WithRequester
 
 
@@ -86,7 +87,7 @@ class UserLDAP(WithRequester):
 
 
 for ldap_key in UserLDAP.CONFIG_KEYS:
-    key_name = re.sub('ldap', '', ldap_key)
+    key_name = ldap_key.replace('ldap', '')
     key_name = re.sub('([a-z0-9])([A-Z])', r'\1_\2', key_name).lower()
 
     # create and add getter method
