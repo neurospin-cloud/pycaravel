@@ -157,7 +157,7 @@ def build_path(keys, path_patterns, strict=False):
         # Optional patterns with selector are cast to mandatory or removed
         for op in optional_patterns:
             for ent_name in {k for k, v in keys.items() if (v is not None)
-                             and not (v[0] != v[0])}:
+                             and not (v[0] != v[0])}:  # noqa: SIM202 FIXME?
                 if (f'{{{ent_name}}}') in op:
                     new_path = new_path.replace(op, op[1:-1])
                     continue
