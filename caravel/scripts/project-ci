@@ -161,11 +161,12 @@ def main(project, upload_mounts, allowed_subjects, working_dir, nextcloud_url,
     if not isinstance(upload_mounts, list):
         upload_mounts = [upload_mounts]
     if verbose > 0:
-        pprint(f"[info] Starting {project} validation/integration ...")
-        pprint("[info] Runtime:")
-        pprint(runtime)
-        pprint("[info] Inputs:")
-        pprint(inputs)
+        logger.info(f"Starting {project} validation/integration ...")
+        logger.info("Runtime:")
+        logger.info(runtime)
+        logger.info("Inputs:")
+        logger.info({key: value for key,value in inputs.items()
+                     if key not in ["password"]})
 
     # Step 1: connect to the NextCloud service you are using.
     session = NextCloud(
