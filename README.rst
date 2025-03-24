@@ -60,6 +60,8 @@ The required dependencies to use the software are:
 * pyEDFlib
 * requests
 * python-docx
+* fire
+* pymzml
 
 
 Install

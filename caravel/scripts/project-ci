@@ -20,7 +20,7 @@ from collections import namedtuple
 from datetime import datetime
 import numpy as np
 import caravel
-from caravel.utils import export_report
+from caravel.utils import export_report, monitor
 from caravel.mail import EmailManager
 from caravel.validation import run_validation
 from caravel.nextcloud import NextCloud, ShareType, Permission
@@ -31,6 +31,7 @@ import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
+@monitor
 def main(project, upload_mounts, allowed_subjects, working_dir, nextcloud_url,
          smtp_host, smtp_port, support_email, test_mod=False, login=None,
          password=None, allow_overwrite=False, verbose=0):
