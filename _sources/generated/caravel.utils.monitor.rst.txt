@@ -6,9 +6,9 @@
 
     This page is a reference documentation. It only explains the function signature, and not how to use it. Please refer to the :ref:`gallery <sphx_glr_auto_gallery>` for the big picture.
 
-.. autofunction:: caravel.parser.build_path
+.. autofunction:: caravel.utils.monitor
 
-.. minigallery:: caravel.parser.build_path caravel.build_path
+.. minigallery:: caravel.utils.monitor
     :add-heading: Examples
     :heading-level: -
 
