@@ -68,4 +68,5 @@ Install
 =======
 
 Check the official documentation dedicated page.
-If using pip, install first requirements: pip install -r requirements.txt
+
+If using pip, install first requirements: ``pip install -r requirements.txt``
