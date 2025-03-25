@@ -4,14 +4,12 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pycaravel"
+readme = "README.rst"
+requires-python = ">=3.8"
 version = "1.0.0"
 authors = [
-    {name = "Antoine Grigis", email = "antoine.grigis@cea.fr"},
+    {name = "pycaravel developers", email = "antoine.grigis@cea.fr"},
 ]
-description = """
-pycaravel:  This module is designed to simplify continuous integration (CI) of
-data from multiple projects."""
-readme = "README.rst"
 license = {text = "CeCILL-B"}
 classifiers = [
     "Development Status :: 1 - Planning",
@@ -37,7 +35,8 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/neurospincloud-ci/pycaravel"
+Source = "https://github.com/neurospincloud-ci/pycaravel/hopla"
+Tracker = "https://github.com/neurospincloud-ci/pycaravel/issues"
 
 [tool.setuptools]
 script-files = ["caravel/scripts/project-ci"]
