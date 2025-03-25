@@ -64,6 +64,7 @@ VERSION = __version__
 PROVIDES = ["caravel"]
 REQUIRES = [
     "pandas",
+    "openpyxl",
     "grabbit @ git+https://github.com/grabbles/grabbit.git",
     "nibabel",
     "numpy",
@@ -74,7 +75,8 @@ REQUIRES = [
     "pyEDFlib",
     "requests",
     "python-docx",
-    "fire"
+    "fire",
+    "pymzml"
 ]
 EXTRA_REQUIRES = {}
 SCRIPTS = [

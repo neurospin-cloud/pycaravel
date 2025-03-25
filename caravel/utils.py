@@ -16,6 +16,9 @@ import os
 from datetime import datetime, date
 from dateutil.relativedelta import relativedelta
 import re
+import json
+import time
+import functools
 from docx import Document
 
 
@@ -110,3 +113,39 @@ def clean_logs_dir(log_dir, cut_date=None):
     for filename in filenames:
         filepath = os.path.join(log_dir, filename)
         os.remove(filepath)
+
+
+def monitor(func):
+    """ A decorator to monitor function and log its status in a root directory.
+    The input function parameters must be set via the 'CARAVEL_ROOT'
+    and 'CARAVEL_NAME' environement variables.
+    """
+    root = os.environ.get("CARAVEL_ROOT", None)
+    name = os.environ.get("CARAVEL_NAME", None)
+    is_monitor = root is not None and name is not None
+    if is_monitor:
+        assert os.path.isdir(root), root
+
+    @functools.wraps(func)
+    def decorated(*args, **kwargs):
+        try:
+            tic = time.time()
+            res = func(*args, **kwargs)
+            toc = time.time()
+            info = {
+                "status": "healthy",
+                "duration": toc - tic
+            }
+            if is_monitor:
+                with open(os.path.join(root, f"{name}.json"), "wt") as of:
+                    json.dump(info, of, indent=4)
+            return res
+        except Exception as e:
+            info = {
+                "status": "dead"
+            }
+            if is_monitor:
+                with open(os.path.join(root, f"{name}.json"), "wt") as of:
+                    json.dump(info, of, indent=4)
+            raise e
+    return decorated

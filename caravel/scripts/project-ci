@@ -20,12 +20,18 @@ from collections import namedtuple
 from datetime import datetime
 import numpy as np
 import caravel
-from caravel.utils import export_report
+from caravel.utils import export_report, monitor
 from caravel.mail import EmailManager
 from caravel.validation import run_validation
 from caravel.nextcloud import NextCloud, ShareType, Permission
 
 
+# Remove warning
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+
+@monitor
 def main(project, upload_mounts, allowed_subjects, working_dir, nextcloud_url,
          smtp_host, smtp_port, support_email, test_mod=False, login=None,
          password=None, allow_overwrite=False, verbose=0):
@@ -108,7 +114,7 @@ def main(project, upload_mounts, allowed_subjects, working_dir, nextcloud_url,
     password: str, default None
         the associated NextCloud login password.
     allow_overwrite: bool, default False
-        optionaly, allow overwriting during data integration.
+        allow overwriting during data integration.
     verbose: int, default 0
         increase the verbosity level: 0 silent, [1, 2] verbose.
     """
@@ -160,11 +166,12 @@ def main(project, upload_mounts, allowed_subjects, working_dir, nextcloud_url,
     if not isinstance(upload_mounts, list):
         upload_mounts = [upload_mounts]
     if verbose > 0:
-        pprint(f"[info] Starting {project} validation/integration ...")
-        pprint("[info] Runtime:")
-        pprint(runtime)
-        pprint("[info] Inputs:")
-        pprint(inputs)
+        logger.info(f"Starting {project} validation/integration ...")
+        logger.info("Runtime:")
+        logger.info(runtime)
+        logger.info("Inputs:")
+        logger.info({key: value for key,value in inputs.items()
+                     if key not in ["password"]})
 
     # Step 1: connect to the NextCloud service you are using.
     session = NextCloud(

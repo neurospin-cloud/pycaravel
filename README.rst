@@ -60,9 +60,13 @@ The required dependencies to use the software are:
 * pyEDFlib
 * requests
 * python-docx
+* fire
+* pymzml
 
 
 Install
 =======
 
 Check the official documentation dedicated page.
+
+If using pip, install first requirements: ``pip install -r requirements.txt``
