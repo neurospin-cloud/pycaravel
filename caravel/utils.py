@@ -19,6 +19,7 @@ import re
 import json
 import time
 import functools
+from tqdm import tqdm
 from docx import Document
 
 
@@ -110,7 +111,7 @@ def clean_logs_dir(log_dir, cut_date=None):
 
     filenames = get_logs_to_remove(log_dir, cut_date=cut_date)
     print(f"Number of files to remove: {len(filenames)}")
-    for filename in filenames:
+    for filename in tqdm(filenames):
         filepath = os.path.join(log_dir, filename)
         os.remove(filepath)
 
