@@ -15,14 +15,14 @@ class Share(WithRequester):
     def validate_share_parameters(path, share_type, share_with):
         """ Check if share parameters make sense.
         """
-        return not (
-            path is None or not isinstance(share_type, int) or (
-                share_with is None
-                and share_type in [ShareType.GROUP, ShareType.USER,
-                                   ShareType.FEDERATED_CLOUD_SHARE,
-                                   ShareType.CIRCLE]
-            )
-        )
+	return (
+	    path is not None and
+	    isinstance(share_type, int) and
+	    (share_with is not None or share_type not in {
+	        ShareType.GROUP, ShareType.USER,
+	        ShareType.FEDERATED_CLOUD_SHARE, ShareType.CIRCLE
+	    })
+	)
 
     def get_shares(self):
         """ Get all shares from the user.
