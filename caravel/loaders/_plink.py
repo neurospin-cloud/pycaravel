@@ -35,6 +35,6 @@ class PLINK(LoaderBase):
         data: xarray.core.dataarray.DataArray
             the loaded table.
         """
-        G = read_plink1_bin(path, verbose=False)
+        data_array = read_plink1_bin(path, verbose=False)
 
-        return G
+        return data_array
