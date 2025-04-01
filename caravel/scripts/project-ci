@@ -314,7 +314,8 @@ def main(project, upload_mounts, allowed_subjects, working_dir, nextcloud_url,
             # send internal error warning mail (with support in copy)
             email_manager.send_mail(
                 item.mails + [support_email], subject="NeuroSpin data collection",
-                body=("The validation/integration process has failed due to an "
+                body=("The validation/integration process of "
+                      f"{os.path.basename(item.uploaddir)} has failed due to an "
                       "internal error. The support team is in copy of this email "
                       "and will fix the problem quickly."),
                 from_addr="noreply@cea.fr", files=None)
@@ -423,13 +424,15 @@ def main(project, upload_mounts, allowed_subjects, working_dir, nextcloud_url,
         # internal error already handled
         if [report[key] for key in report if report[key] != {}]:
             mail_txt = (
-                "The validation/integration process is now complete. "
+                "The validation/integration process of "
+                f"{os.path.basename(item.uploaddir)} is now complete. "
                 "Your last upload did not pass the checks, "
                 "Please connect the service to see the report file "
                 "and correct your input.")
         else:
             mail_txt = (
-                "The validation/integration process is now complete. "
+                "The validation/integration process of "
+                f"{os.path.basename(item.uploaddir)} is now complete. "
                 "Your last upload passed the checks, "
                 "you can see the result in the 'collected' "
                 "folder of your modality.")
