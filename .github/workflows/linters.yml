@@ -35,4 +35,5 @@ jobs:
     - name: Lint with Ruff
       uses: astral-sh/ruff-action@v3
       run: |
-        ruff check --output-format=github
+        ruff check --fix --output-format=github
+        ruff format format

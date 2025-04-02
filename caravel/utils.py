@@ -22,7 +22,7 @@ from docx import Document
 
 
 def export_report(report, timestamp, outfile):
-    """ Export the report in docx format.
+    """Export the report in docx format.
 
     Parameters
     ----------
@@ -40,14 +40,16 @@ def export_report(report, timestamp, outfile):
     paragraph.text = f"NeuroSpin\tReporting\t{timestamp}"
     paragraph = document.add_paragraph(
         f"\n\n\n\nYou will find below the report generated on '{timestamp}'. "
-        "If you have any questions please use the contact mail: rlink@cea.fr.")
+        "If you have any questions please use the contact mail: rlink@cea.fr."
+    )
     for family, family_item in report.items():
         document.add_heading(family.replace(".", " ").title())
         for validator, validator_item in family_item.items():
             split_validator = re.findall("[A-Z][^A-Z]*", validator)
             document.add_heading(" ".join(split_validator))
             paragraph = document.add_paragraph(
-                "\n\n Below the table summarizing the errors.\n\n")
+                "\n\n Below the table summarizing the errors.\n\n"
+            )
             for key, values in validator_item.items():
                 table = document.add_table(rows=len(values), cols=2)
                 cell = table.cell(0, 0)
@@ -59,7 +61,7 @@ def export_report(report, timestamp, outfile):
 
 
 def monitor(func):
-    """ A decorator to monitor function and log its status in a root directory.
+    """A decorator to monitor function and log its status in a root directory.
     The input function parameters must be set via the 'CARAVEL_ROOT'
     and 'CARAVEL_NAME' environement variables.
     """
@@ -75,20 +77,16 @@ def monitor(func):
             tic = time.time()
             res = func(*args, **kwargs)
             toc = time.time()
-            info = {
-                "status": "healthy",
-                "duration": toc - tic
-            }
+            info = {"status": "healthy", "duration": toc - tic}
             if is_monitor:
                 with open(os.path.join(root, f"{name}.json"), "wt") as of:
                     json.dump(info, of, indent=4)
             return res
         except Exception as e:
-            info = {
-                "status": "dead"
-            }
+            info = {"status": "dead"}
             if is_monitor:
                 with open(os.path.join(root, f"{name}.json"), "wt") as of:
                     json.dump(info, of, indent=4)
             raise e
+
     return decorated
