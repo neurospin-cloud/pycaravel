@@ -1,12 +1,11 @@
 [build-system]
-requires = ["setuptools>=61.2"]
+requires = ["setuptools>=64", "setuptools-scm"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "pycaravel"
 readme = "README.rst"
 requires-python = ">=3.8"
-version = "1.0.0"
 authors = [
     {name = "pycaravel developers", email = "antoine.grigis@cea.fr"},
 ]
@@ -33,6 +32,7 @@ dependencies = [
     "fire",
     "pymzml",
 ]
+dynamic = ["version"]
 
 [project.urls]
 Source = "https://github.com/neurospincloud-ci/pycaravel/hopla"
@@ -42,6 +42,9 @@ Tracker = "https://github.com/neurospincloud-ci/pycaravel/issues"
 script-files = ["caravel/scripts/project-ci"]
 platforms = ["Linux", "OSX"]
 include-package-data = false
+
+[tool.setuptools.dynamic]
+version = {attr = "caravel.info.__version__"}
 
 [tool.setuptools.packages.find]
 exclude = ["doc"]
