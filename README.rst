@@ -12,16 +12,16 @@
 
 
 .. |PythonVersion| image:: https://img.shields.io/badge/python-3.8%20%7C%203.12-blue
-.. _PythonVersion: https://github.com/neurospincloud-ci/pycaravel
+.. _PythonVersion: https://github.com/neurospin-cloud/pycaravel
 
-.. |Pep8| image:: https://github.com/neurospincloud-ci/pycaravel/actions/workflows/pep8.yml/badge.svg
-.. _Pep8: https://github.com/neurospincloud-ci/pycaravel/actions
+.. |Pep8| image:: https://github.com/neurospin-cloud/pycaravel/actions/workflows/pep8.yml/badge.svg
+.. _Pep8: https://github.com/neurospin-cloud/pycaravel/actions
 
 .. |PyPi| image:: https://badge.fury.io/py/pycaravel.svg
 .. _PyPi: https://badge.fury.io/py/pycaravel
 
-.. |Doc| image:: https://github.com/neurospincloud-ci/pycaravel/actions/workflows/documentation.yml/badge.svg
-.. _Doc: http://neurospincloud-ci.github.io/pycaravel
+.. |Doc| image:: https://github.com/neurospin-cloud/pycaravel/actions/workflows/documentation.yml/badge.svg
+.. _Doc: http://neurospin-cloud.github.io/pycaravel
 
 .. |License| image:: https://img.shields.io/badge/License-CeCILLB-blue.svg
 .. _License: http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.html
@@ -40,8 +40,8 @@ multiple projects.
 Important links
 ===============
 
-- Official source code repo: https://github.com/neurospincloud-ci/pycaravel
-- HTML documentation: http://neurospincloud-ci.github.io/pycaravel
+- Official source code repo: https://github.com/neurospin-cloud/pycaravel
+- HTML documentation: http://neurospin-cloud.github.io/pycaravel
 
 
 Dependencies

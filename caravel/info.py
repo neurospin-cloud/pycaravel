@@ -50,8 +50,8 @@ LONG_DESCRIPTION = long_description
 EXTRANAME = "NeuroSpin webPage"
 EXTRAURL = ("http://joliot.cea.fr/drf/joliot/Pages/Entites_de_recherche/"
             "NeuroSpin.aspx")
-URL = "https://github.com/neurospincloud-ci/pycaravel"
-DOWNLOAD_URL = "https://github.com/neurospincloud-ci/pycaravel"
+URL = "https://github.com/neurospin-cloud/pycaravel"
+DOWNLOAD_URL = "https://github.com/neurospin-cloud/pycaravel"
 LICENSE = "CeCILL-B"
 CLASSIFIERS = CLASSIFIERS
 AUTHOR = """
