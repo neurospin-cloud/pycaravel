@@ -11,7 +11,7 @@
 |PyPi|_
 
 
-.. |PythonVersion| image:: https://img.shields.io/badge/python-3.8%20%7C%203.12-blue
+.. |PythonVersion| image:: https://img.shields.io/badge/python-3.9%20%7C%203.12-blue
 .. _PythonVersion: https://github.com/neurospin-cloud/pycaravel
 
 .. |Pep8| image:: https://github.com/neurospin-cloud/pycaravel/actions/workflows/pep8.yml/badge.svg

@@ -15,12 +15,13 @@ This module provides common utilities.
 import functools
 import json
 import os
-from datetime import datetime, date
-from dateutil.relativedelta import relativedelta
 import re
 import time
-from tqdm import tqdm
+from datetime import date, datetime
+
+from dateutil.relativedelta import relativedelta
 from docx import Document
+from tqdm import tqdm
 
 
 def export_report(report, timestamp, outfile):
