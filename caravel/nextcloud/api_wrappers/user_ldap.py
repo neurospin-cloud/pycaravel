@@ -88,7 +88,7 @@ class UserLDAP(WithRequester):
 
 for ldap_key in UserLDAP.CONFIG_KEYS:
     key_name = ldap_key.replace('ldap', '')
-    key_name = re.sub('([a-z0-9])([A-Z])', r'\1_\2', key_name).lower()
+    key_name = re.sub(r'([a-z0-9])([A-Z])', r'\1_\2', key_name).lower()
 
     # create and add getter method
     getter_name = f"get_ldap_{key_name}"
