@@ -10,18 +10,16 @@
 This module contains the BIDS parser definition.
 """
 
-# System import
+# Imports
 import datetime
 import os
 import pickle
 
-# Third party import
 import numpy as np
 import pandas as pd
 
 from grabbit import Layout
 
-# Package import
 from .parser_base import ParserBase
 
 

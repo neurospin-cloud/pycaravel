@@ -4,7 +4,7 @@
 
 **Development**
 
-|Pep8|_ |Doc|_
+|Linter|_ |Doc|_
 
 **Release**
 
@@ -14,8 +14,8 @@
 .. |PythonVersion| image:: https://img.shields.io/badge/python-3.9%20%7C%203.12-blue
 .. _PythonVersion: https://github.com/neurospin-cloud/pycaravel
 
-.. |Pep8| image:: https://github.com/neurospin-cloud/pycaravel/actions/workflows/pep8.yml/badge.svg
-.. _Pep8: https://github.com/neurospin-cloud/pycaravel/actions
+.. |Linter| image:: https://github.com/neurospin-cloud/pycaravel/actions/workflows/linters.yml/badge.svg
+.. _Linter: https://github.com/neurospin-cloud/pycaravel/actions
 
 .. |PyPi| image:: https://badge.fury.io/py/pycaravel.svg
 .. _PyPi: https://badge.fury.io/py/pycaravel
