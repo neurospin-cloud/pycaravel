@@ -33,6 +33,5 @@ jobs:
         python -m pip install nose nose-exclude coverage coveralls ruff
         pip install --progress-bar off .
     - name: Lint with Ruff
-      uses: astral-sh/ruff-action@v3
       run: |
         ruff check caravel
