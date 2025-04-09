@@ -12,13 +12,13 @@ This module provides common utilities.
 """
 
 # Imports
+import functools
+import json
 import os
 from datetime import datetime, date
 from dateutil.relativedelta import relativedelta
 import re
-import json
 import time
-import functools
 from tqdm import tqdm
 from docx import Document
 
@@ -119,7 +119,7 @@ def clean_logs_dir(log_dir, cut_date=None):
 def monitor(func):
     """ A decorator to monitor function and log its status in a root directory.
     The input function parameters must be set via the 'CARAVEL_ROOT'
-    and 'CARAVEL_NAME' environement variables.
+    and 'CARAVEL_NAME' environment variables.
     """
     root = os.environ.get("CARAVEL_ROOT", None)
     name = os.environ.get("CARAVEL_NAME", None)

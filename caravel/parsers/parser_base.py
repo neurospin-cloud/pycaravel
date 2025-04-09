@@ -11,11 +11,11 @@ This module contains the generic parser definition.
 """
 
 # System import
-import os
-import json
-import glob
-import pickle
 import datetime
+import glob
+import json
+import os
+import pickle
 
 # Third party import
 import pandas as pd
@@ -47,8 +47,8 @@ class ParserBase:
         _conf = ParserBase._get_conf(confdir)
         if project not in _conf:
             raise ValueError(
-                "Unknown configuration for project '{}'. Available projects "
-                "are: {}.".format(project, _conf.keys()))
+                f"Unknown configuration for project '{project}'. Available projects "
+                f"are: {_conf.keys()}.")
         self.conf = _conf[project]
         if layoutdir is not None:
             _repr = self._get_repr(layoutdir)
@@ -108,8 +108,8 @@ class ParserBase:
                 representations[project] = {}
             representations[project].setdefault(name, []).append(
                 {"date": timestamp, "path": path})
-        for project, project_data in representations.items():
-            for name, name_data in project_data.items():
+        for project_data in representations.values():
+            for name_data in project_data.values():
                 name_data.sort(key=lambda x: datetime.datetime.strptime(
                     x["date"], "%Y-%m-%d"))
         return representations
