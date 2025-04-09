@@ -11,5 +11,5 @@ pandas-plink
 pyEDFlib
 requests
 python-docx
-sphinx==3.5.4
+sphinx==7.1.2
 pymzml
