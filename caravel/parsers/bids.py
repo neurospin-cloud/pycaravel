@@ -17,7 +17,6 @@ import pickle
 
 import numpy as np
 import pandas as pd
-
 from grabbit import Layout
 
 from .parser_base import ParserBase
