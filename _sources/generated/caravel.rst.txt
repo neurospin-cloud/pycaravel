@@ -47,7 +47,9 @@ This module provides common utilities.
 .. rst-class:: documentation-contents
 
   **Functions**:
+    * `caravel.utils.clean_logs_dir <caravel.utils.clean_logs_dir.html>`_
     * `caravel.utils.export_report <caravel.utils.export_report.html>`_
+    * `caravel.utils.get_logs_to_remove <caravel.utils.get_logs_to_remove.html>`_
     * `caravel.utils.monitor <caravel.utils.monitor.html>`_
 
 caravel.validation

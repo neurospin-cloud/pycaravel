@@ -77,7 +77,11 @@ This is the classes and functions reference in caravel. Please refer to the gall
 
           `caravel.configure.logo <caravel.configure.logo.html>`_
 
+          `caravel.utils.clean_logs_dir <caravel.utils.clean_logs_dir.html>`_
+
           `caravel.utils.export_report <caravel.utils.export_report.html>`_
+
+          `caravel.utils.get_logs_to_remove <caravel.utils.get_logs_to_remove.html>`_
 
           `caravel.utils.monitor <caravel.utils.monitor.html>`_
 

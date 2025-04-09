@@ -6,9 +6,9 @@
 
     This page is a reference documentation. It only explains the function signature, and not how to use it. Please refer to the :ref:`gallery <sphx_glr_auto_gallery>` for the big picture.
 
-.. autofunction:: caravel.configure.info
+.. autofunction:: caravel.utils.clean_logs_dir
 
-.. minigallery:: caravel.configure.info caravel.info
+.. minigallery:: caravel.utils.clean_logs_dir
     :add-heading: Examples
     :heading-level: -
 
