@@ -1,3 +1,5 @@
+.. _sphx_glr_auto_gallery:
+
 pycaravel usage examples
 ========================
 

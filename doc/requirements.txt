@@ -11,5 +11,9 @@ pandas-plink
 pyEDFlib
 requests
 python-docx
-sphinx==7.1.2
 pymzml
+﻿sphinx==7.2.6
+sphinx-gallery==0.19.0
+memory-profiler==0.61.0
+setuptools==78.1.0
+
