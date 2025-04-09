@@ -7,14 +7,14 @@
 ##########################################################################
 
 # Imports
-import sys
-import os
 import datetime
+import os
 import subprocess
+import sys
 from distutils.version import LooseVersion
-import sphinx
-import pysphinxdoc
 
+import pysphinxdoc
+import sphinx
 
 installdir = os.path.abspath("../..")
 env = os.environ
@@ -106,7 +106,7 @@ copyright = f"""{datetime.date.today().year}, pycaravel developers <antoine.grig
 # built documents.
 #
 # The short X.Y version.
-version = "0.0.0"
+version = "1.0.0"
 # The full version, including alpha/beta/rc tags.
 release = version
 

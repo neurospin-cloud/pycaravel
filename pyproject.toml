@@ -1,12 +1,11 @@
 [build-system]
-requires = ["setuptools>=61.2"]
+requires = ["setuptools>=64", "setuptools-scm"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "pycaravel"
 readme = "README.rst"
 requires-python = ">=3.8"
-version = "1.0.0"
 authors = [
     {name = "pycaravel developers", email = "antoine.grigis@cea.fr"},
 ]
@@ -33,15 +32,19 @@ dependencies = [
     "fire",
     "pymzml",
 ]
+dynamic = ["version"]
 
 [project.urls]
-Source = "https://github.com/neurospincloud-ci/pycaravel/hopla"
-Tracker = "https://github.com/neurospincloud-ci/pycaravel/issues"
+Source = "https://github.com/neurospin-cloud/pycaravel/"
+Tracker = "https://github.com/neurospin-cloud/pycaravel/issues"
 
 [tool.setuptools]
 script-files = ["caravel/scripts/project-ci"]
 platforms = ["Linux", "OSX"]
 include-package-data = false
+
+[tool.setuptools.dynamic]
+version = {attr = "caravel.info.__version__"}
 
 [tool.setuptools.packages.find]
 exclude = ["doc"]
@@ -49,6 +52,35 @@ namespaces = false
 
 [tool.setuptools.package-data]
 caravel = ["conf/*.conf"]
+
+[tool.ruff.lint]
+extend-select = [
+    "I",    # isort
+    "UP",   # pyupgrade
+    "B",    # flake8-bugbear
+    "C4",   # flake8-comprehensions
+    "ISC",  # flake8-implicit-str-concat
+    "PIE",  # flake8-pie
+    "PYI",  # flake8-pyi
+    "SIM",  # flake8-simplify
+    "FLY",  # flynt
+    "PERF", # Perflint
+    "N",    # pep8-naming
+    "FURB", # refurb
+    "RUF",
+]
+ignore = [
+    "UP015",
+    "B023",
+    "B028",
+    "B904",
+    "PYI024",
+    "RUF005",
+    "RUF012",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"*/__init__.py" = ["F401"]
 
 [tool.nosetests]
 verbosity = "2"
