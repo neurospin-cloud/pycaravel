@@ -61,7 +61,7 @@ def export_report(report, timestamp, outfile):
 def monitor(func):
     """ A decorator to monitor function and log its status in a root directory.
     The input function parameters must be set via the 'CARAVEL_ROOT'
-    and 'CARAVEL_NAME' environement variables.
+    and 'CARAVEL_NAME' environment variables.
     """
     root = os.environ.get("CARAVEL_ROOT", None)
     name = os.environ.get("CARAVEL_NAME", None)
