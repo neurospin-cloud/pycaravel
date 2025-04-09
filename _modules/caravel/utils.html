@@ -199,7 +199,7 @@
 <div class="viewcode-block" id="monitor"><a class="viewcode-back" href="../../generated/caravel.utils.monitor.html#caravel.utils.monitor">[docs]</a><span class="k">def</span><span class="w"> </span><span class="nf">monitor</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; A decorator to monitor function and log its status in a root directory.</span>
 <span class="sd">    The input function parameters must be set via the &#39;CARAVEL_ROOT&#39;</span>
-<span class="sd">    and &#39;CARAVEL_NAME&#39; environement variables.</span>
+<span class="sd">    and &#39;CARAVEL_NAME&#39; environment variables.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">root</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;CARAVEL_ROOT&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;CARAVEL_NAME&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
