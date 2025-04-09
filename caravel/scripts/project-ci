@@ -12,6 +12,7 @@ import os
 import re
 import json
 import shutil
+import glob
 import inspect
 import logging
 import importlib
@@ -144,6 +145,14 @@ def main(project, upload_mounts, allowed_subjects, working_dir, nextcloud_url,
     if verbose > 0:
         validation_module.ValidationBase.__level__ = "debug"
     validation_module.ValidationBase.setup_logging(logfile=logfile)
+    # set up (= empty) layout folder
+    layoutdir = os.path.join(working_dir, "layout")
+    if os.path.isdir(layoutdir):
+        for path in glob.glob(os.path.join(layoutdir, "*")):
+            if os.path.isdir(path):
+                shutil.rmtree(path)
+            if os.path.isfile(path):
+                os.remove(path)
     # set up layout (what is that?)
     layoutdir = os.path.join(working_dir, "layout")
     if os.path.isdir(layoutdir):
