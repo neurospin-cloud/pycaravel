@@ -40,7 +40,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install --progress-bar off .
-        pip install -r doc/requirements.txt
+        pip install git+https://github.com/AGrigis/pysphinxdoc.git
     - name: Compute documentation
       run: |
         mkdir -p tmp/doc
@@ -94,7 +94,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install --progress-bar off .
-        pip install -r doc/requirements.txt
+        pip install git+https://github.com/AGrigis/pysphinxdoc.git
     - name: Compute documentation
       run: |
         mkdir -p tmp/doc
