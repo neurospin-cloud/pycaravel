@@ -72,7 +72,7 @@ extensions = [
     "sphinx.ext.intersphinx",
     "sphinx.ext.todo",
     "sphinx.ext.coverage",
-    #     sphinx_math,
+    # "sphinx_math",
     "sphinx.ext.ifconfig",
     "sphinx.ext.autosummary",
     "sphinx.ext.viewcode",
